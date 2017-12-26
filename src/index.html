@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <p class="text" >If you click on me, I will disappear1.</p>
+    <p>If you click on me, I will disappear2.</p>
+    <div>If you click on me, I will disappear3.</div>
+    <button id="qurey1">查询1</button>
+    <button id="qurey2">查询2</button>
+    <button id="aaa">查询3</button>
+    <button id="abbb">查询4</button>
+
+    <script type="text/javascript">
+        var jq=jQuery.noConflict();
+        jq(document).ready(function () {
+            jq(".text").click(function () {
+                jq(this).hide();
+            })
+            jq("div").click(function () {
+                jq(this).hide();
+            });
+            jq('button[id^=qurey]').click(function(){
+                alert("点击我了！");
+            })
+            jq('button[id$=b]').click(function(){
+                alert("点击b了！");
+            })
+
+        });
+    </script>
+</body>
+
+
+</html>
